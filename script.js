@@ -1,3 +1,4 @@
+//
 const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
     "W   W     W     W W W",
@@ -16,7 +17,7 @@ const map = [
     "WWWWWWWWWWWWWWWWWWWWW",
 ];
 
-let y=0;
+let y=9;
 let x=0;
 
 let player = document.getElementById('player');
@@ -26,13 +27,13 @@ document.addEventListener('keydown', movePlayer);
 const createMaze = function (blueprint) {
     for (let rowNum = 0; rowNum < blueprint.length; rowNum++) {
         const rowString = blueprint[rowNum]
-        let blockDivs = ' '
+        let blockDivs ='';
         for (let colNum = 0; colNum < rowString.length; colNum++) {
             const blockType = rowString[colNum]
             if (blockType === 'W') {
                 blockDivs += '<div class="block wall"></div>'
             } else if (blockType === 'S') {
-                blockDivs += '<div class="block start"><div id= "player" ></div></div>'
+                blockDivs += '<div class="block start"></div>'
                 y = rowNum
                 x = colNum
 
