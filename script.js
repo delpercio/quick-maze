@@ -1,5 +1,5 @@
 //
-const map = [
+let map = [
     "WWWWWWWWWWWWWWWWWWWWW",
     "W   W     W     W W W",
     "W W W WWW WWWWW W W W",
@@ -32,6 +32,8 @@ const createMaze = function (blueprint) {
             const blockType = rowString[colNum]
             if (blockType === 'W') {
                 blockDivs += '<div class="block wall"></div>'
+
+            
             } else if (blockType === 'S') {
                 blockDivs += '<div class="block start"></div>'
                 y = rowNum
